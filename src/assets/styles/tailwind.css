@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: 'Open Sans Hebrew';
+        font-style: normal;
+        font-weight: 800;
+        src: url("../fonts/open-sans-hebrew/OpenSansHebrew-ExtraBold.ttf");
+    }
+
+    @font-face {
+        font-family: 'Open Sans Hebrew';
+        font-style: normal;
+        font-weight: 700;
+        src: url("../fonts/open-sans-hebrew/OpenSansHebrew-Bold.ttf");
+    }
+
+    @font-face {
+        font-family: 'Open Sans Hebrew';
+        font-style: normal;
+        font-weight: 400;
+        src: url("../fonts/open-sans-hebrew/OpenSansHebrew-Regular.ttf");
+    }
+
+    @font-face {
+        font-family: 'Open Sans Hebrew';
+        font-style: normal;
+        font-weight: 300;
+        src: url("../fonts/open-sans-hebrew/OpenSansHebrew-Light.ttf");
+    }
+
+    html, body {
+        font-family: "Open Sans Hebrew","Helvetica Neue",Verdana,Arial,sans-serif;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        background-color: #fff;
+    }
+
+    .direction-rtl {
+        direction: rtl !important;
+    }
+
+    .direction-ltr {
+        direction: ltr !important;
+    }
+
+    .content-container {
+        width: 980px;
+        margin: 0 auto;
+    }
+
+    .orderedList {
+        position: relative;
+        counter-increment: item;
+        text-indent: -1em;
+        letter-spacing: -.0014em;
+    }
+
+    .orderedList::before {
+        display: inline-block;
+        width: 1.5em;
+        padding-right: .5em;
+        color: #004567;
+        font-weight: bold;
+        text-align: right;
+        content: counter(item) ".";
+    }
+
+    .wrapper {
+        width: 92%; 
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+    }
+
+    .tile-wrapper {
+        max-width: 980px;
+        margin: 0 auto;
+    }
+
+    @media only screen and (min-width: 1200px) and (max-width: 2199px) {
+        .wrapper {
+            width: 90%;
+            max-width: 1430px;
+        }
+    }   
+
+
+    @media only screen and (min-width: 980px) and (max-width: 1199px) {
+        .wrapper {
+            width: 95%;
+            max-width: 1080px;
+        }
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 979px) {
+        .wrapper {
+            width: 100%;
+            max-width: 930px;
+        }
+
+        .tile-wrapper {
+            width: 680px;
+        }
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+        .content-container {
+            width: 680px;
+        }
+    }
+    
+
+    @media only screen and (min-width: 280px) and (max-width: 767px) {
+        .wrapper {
+            width: 100%;
+        }
+
+        .content-container {
+            width: 83.33333%;
+            /* max-width: 420px; */
+        }
+
+        .tile-wrapper {
+            width: 100%;
+        }
+    }
+}
